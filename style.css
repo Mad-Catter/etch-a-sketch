@@ -1,0 +1,111 @@
+:root {
+    /* These variables are decided in script.js */
+    --grid-div-height: 0px;
+    --grid-div-width: 0px;
+    --container-grid-size: 0px;
+
+    --gray-color: hsl(220, 13%, 91%);
+    --blue-border-color: hsl(216, 92%, 58%);
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", "sans-serrif";
+    
+}
+header {
+    height: 100px;
+    width: 100%;
+    background-color: hsl(351.69deg 12.9% 24.54% / 92%);
+    border: 1px solid black;
+    position: fixed;
+    z-index: 1;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#color-selectors {
+    width: 75%;
+}
+#btn-container {
+    width: 25%;
+    display: flex;
+    justify-content: space-between;
+}
+#btn-container button {
+    border: rgb(103, 217, 255) 5px solid;
+    background-color: rgb(198, 197, 202);
+    border-radius: 15px;
+    height: 75px;
+    width: 100px;
+    font-size: 1.25rem;
+    font-weight: bold;
+    background-color: #1f2937;
+    color: white;
+}
+#reset {
+    margin-right: 30px
+}
+/* The resize box */
+#resize-box {
+    position: fixed;
+    z-index: 2;
+    left: 75%;
+    top: 9.75%;
+    height: 300px;
+    width: 300px;
+    background-color: #1f2937;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 25px;
+}
+#resize-box button, #resize-box input, #resize-box label {
+    width: 100%;
+    font-size: 2rem;
+    text-align: center;
+    margin: 5px;
+    color: white;
+    
+}
+#resize {
+    border: rgb(103, 217, 255) 5px solid;
+    background-color: rgb(198, 197, 202);
+    border-radius: 25px;
+}
+#resize:hover {
+    cursor: pointer;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+#resize-box input {
+    background-color: rgb(198, 197, 202);
+    border-radius: 25px;
+}
+/* The Body */
+body {
+    background-color: var(--gray-color);
+}
+#parent {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 100px;
+    
+}
+#container {
+    height: var(--container-grid-size);
+    width: var(--container-grid-size);
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+    
+}
+.grid-div {
+    height: var(--grid-div-height);
+    width: var(--grid-div-width);
+    border: rgba(0, 0, 0, 0.164) solid 1px;
+}
