@@ -11,19 +11,30 @@
 </head>
 <body>
     <header>
-        <div id="color-selectors">
-
+        <div class="color-selectors">
+            <button id="red"></button>
+            <button id="blue"></button>
+            <button id="green"></button>
+            <button id="purple"></button>
+            <button id="yellow"></button>
+            <button id="white"></button>
+            <button id="black"></button>
+            <button id="random">Random</button>
+            <button id="darken-toggle">Darken</button>
         </div>
         <div id="btn-container">
-            <button id="toggle">Make New Grid</button>
-            <button id="reset">Reset Grid</button>
+            <button id="modal-toggle">Make New Grid</button>
+            <button id="reset">Clear Grid</button>
         </div>
-        <div id="resize-box">
-            <label>Rows</label>
-            <input type="number" name="rows" id="row-input">
-            <label>Columns</label>
-            <input type="number" name="columns" id="column-input">
-            <button id="resize">Make New Grid!</button>
+        <div class="modal">
+            <div class="resize-box">
+                <label for="rows">Rows</label>
+                <input type="number" name="rows" id="row-input">
+                <label for="columns">Columns</label>
+                <input type="number" name="columns" id="column-input">
+                <button id="resize">Make New Grid!</button>
+            </div>
+            <div class="cover"></div>
         </div>
     </header>
     <div id="parent">

@@ -6,6 +6,8 @@
 
     --gray-color: hsl(220, 13%, 91%);
     --blue-border-color: hsl(216, 92%, 58%);
+    --random-background-color: hsl(75,75%,50%);
+    --random-frontground-color: hsl(225,75% 50%);
 }
 * {
     padding: 0;
@@ -25,9 +27,47 @@ header {
     justify-content: space-evenly;
     align-items: center;
 }
-#color-selectors {
+/* Color Selection Section */
+.color-selectors {
     width: 75%;
+    display: flex;
+    justify-content: space-evenly;
 }
+.color-selectors button {
+    height: 60px;
+    width: 60px;
+    border-radius: 100%;
+    border: 3px solid var(--blue-border-color)
+}
+#red {
+    background-color: hsl(0, 80%, 50%);
+}
+#blue {
+    background-color: hsl(228, 80%, 50%);
+}
+#green {
+    background-color: hsl(134, 80%, 50%);
+}
+#purple {
+    background-color: hsl(273, 80%, 50%);
+}
+#yellow {
+    background-color: hsl(64, 80%, 50%);
+}
+#black {
+    background-color: hsl(0,0%,0%);
+}
+#random {
+    background-color: var(--random-background-color);
+    color: var(--random-frontground-color);
+    font-weight: bolder;
+}
+#darken-toggle {
+    background: linear-gradient(135deg, black,white);
+    font-weight: bold;
+    border-radius: 15%;
+}
+/* Button Section */
 #btn-container {
     width: 25%;
     display: flex;
@@ -48,10 +88,10 @@ header {
     margin-right: 30px
 }
 /* The resize box */
-#resize-box {
+.resize-box {
     position: fixed;
     z-index: 2;
-    left: 75%;
+    left: 1000%;
     top: 9.75%;
     height: 300px;
     width: 300px;
@@ -60,7 +100,10 @@ header {
     flex-wrap: wrap;
     border-radius: 25px;
 }
-#resize-box button, #resize-box input, #resize-box label {
+.resize-box.open {
+    left: 75%;
+}
+.resize-box button, .resize-box input, .resize-box label {
     width: 100%;
     font-size: 2rem;
     text-align: center;
@@ -81,9 +124,21 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-#resize-box input {
+.resize-box input {
     background-color: rgb(198, 197, 202);
     border-radius: 25px;
+}
+.cover {
+    position: fixed;
+    z-index: 1;
+    top: 100px;
+    width: 100%;
+    height: 100%;
+    left: 1000%;
+    background-color: hsla(1, 0%, 0%, 30%);
+}
+.cover.open {
+    left: 0%;
 }
 /* The Body */
 body {
