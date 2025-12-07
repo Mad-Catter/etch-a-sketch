@@ -1,13 +1,16 @@
 :root {
     /* These variables are decided in script.js */
-    --grid-div-height: 0px;
-    --grid-div-width: 0px;
-    --container-grid-size: 0px;
+    --grid-div-height: 0;
+    --grid-div-width: 0;
+    --container-grid-size: 0;
+    --grid-div-border: hsl(0,0%,0%,0.164) 1px solid;
+    --random-background-color: hsl(75,75%,50%);
+    --random-frontground-color: hsl(225,75% 50%);
+
 
     --gray-color: hsl(220, 13%, 91%);
     --blue-border-color: hsl(216, 92%, 58%);
-    --random-background-color: hsl(75,75%,50%);
-    --random-frontground-color: hsl(225,75% 50%);
+    
 }
 * {
     padding: 0;
@@ -17,7 +20,7 @@
     
 }
 header {
-    height: 100px;
+    height: 6.25rem;
     width: 100%;
     background-color: hsl(351.69deg 12.9% 24.54% / 92%);
     border: 1px solid black;
@@ -27,18 +30,23 @@ header {
     justify-content: space-evenly;
     align-items: center;
 }
+
+button:hover {
+    cursor: pointer;
+}
 /* Color Selection Section */
 .color-selectors {
-    width: 75%;
+    width: 65%;
     display: flex;
     justify-content: space-evenly;
 }
-.color-selectors button {
-    height: 60px;
-    width: 60px;
+.color-selectors button, header button {
+    height: 3.75rem;
+    width: 3.75rem;
     border-radius: 100%;
     border: 3px solid var(--blue-border-color)
 }
+
 #red {
     background-color: hsl(0, 80%, 50%);
 }
@@ -66,26 +74,30 @@ header {
     background: linear-gradient(135deg, black,white);
     font-weight: bold;
     border-radius: 15%;
+    margin-right: 3rem;
+}
+.color-selectors .activated-border, header .activated-border {
+    border: 3px solid hsl(116,100%,71%);
 }
 /* Button Section */
 #btn-container {
-    width: 25%;
+    width: 30%;
     display: flex;
     justify-content: space-between;
 }
 #btn-container button {
-    border: rgb(103, 217, 255) 5px solid;
-    background-color: rgb(198, 197, 202);
+    border: hsl(184, 67%, 64%) 5px solid;
+    background-color: hsl(252, 4%, 78%);
     border-radius: 15px;
-    height: 75px;
-    width: 100px;
+    height: 4.69rem;
+    width: 6.25rem;
     font-size: 1.25rem;
     font-weight: bold;
-    background-color: #1f2937;
+    background-color: hsl(215,28%,17%);
     color: white;
 }
 #reset {
-    margin-right: 30px
+    margin-right: 2rem;
 }
 /* The resize box */
 .resize-box {
@@ -93,31 +105,28 @@ header {
     z-index: 2;
     left: 1000%;
     top: 9.75%;
-    height: 300px;
-    width: 300px;
-    background-color: #1f2937;
+    height: 18.75rem;
+    width: 18.75rem;
+    background-color: hsl(215,28%,17%);
     display: flex;
     flex-wrap: wrap;
     border-radius: 25px;
 }
 .resize-box.open {
-    left: 75%;
+    left: 70%;
 }
 .resize-box button, .resize-box input, .resize-box label {
     width: 100%;
     font-size: 2rem;
     text-align: center;
-    margin: 5px;
+    margin: 0.3rem;
     color: white;
     
 }
 #resize {
-    border: rgb(103, 217, 255) 5px solid;
-    background-color: rgb(198, 197, 202);
+    border: hsl(184, 67%, 64%) 5px solid;
+    background-color:hsl(252, 4%, 78%);
     border-radius: 25px;
-}
-#resize:hover {
-    cursor: pointer;
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -131,7 +140,7 @@ input::-webkit-inner-spin-button {
 .cover {
     position: fixed;
     z-index: 1;
-    top: 100px;
+    top: 6.25rem;
     width: 100%;
     height: 100%;
     left: 1000%;
@@ -144,11 +153,14 @@ input::-webkit-inner-spin-button {
 body {
     background-color: var(--gray-color);
 }
+main {
+    position: relative;
+    top: 6.25rem;
+}
 #parent {
     display: flex;
     justify-content: center;
-    position: relative;
-    top: 100px;
+    
     
 }
 #container {
@@ -162,5 +174,11 @@ body {
 .grid-div {
     height: var(--grid-div-height);
     width: var(--grid-div-width);
-    border: rgba(0, 0, 0, 0.164) solid 1px;
+    border: var(--grid-div-border);
+}
+/* footer */
+footer {
+    width: 100%;
+    height: 4.375rem;
+    background-color: hsl(351.69deg 12.9% 24.54% / 92%);
 }
